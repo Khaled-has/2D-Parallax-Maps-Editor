@@ -1,5 +1,0 @@
-D:/World-Editor-Project/2D-Parallax-Maps-Editor/out/build/x64-Debug/CMakeFiles/glad.dir
-D:/World-Editor-Project/2D-Parallax-Maps-Editor/out/build/x64-Debug/CMakeFiles/ImGui.dir
-D:/World-Editor-Project/2D-Parallax-Maps-Editor/out/build/x64-Debug/CMakeFiles/2D-Parallax-Maps-Editor.dir
-D:/World-Editor-Project/2D-Parallax-Maps-Editor/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-D:/World-Editor-Project/2D-Parallax-Maps-Editor/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
