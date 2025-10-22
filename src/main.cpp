@@ -96,13 +96,17 @@ int main(int argc, char* argv[]) {
 	// Loop
 	bool run = true;
 	SDL_Event ev;
-	FrameRatLimet frame;
-	frame.SetFrameLimet(60);
-	frame.Set_VSYNC(true);
+
+
+	FrameRatLimet updateFrames;
+	updateFrames.SetFrameLimet(50);
+
+	FrameRatLimet rendererFrames;
+	rendererFrames.SetFrameLimet(50);
 
 	while (run) {
 
-		frame.StartPrgrame();
+		updateFrames.StartPrgrame();
 
 		// --------------------------------------------------------------------------------------------------
 		// -----------------------------------------(   PollEvents   )------------------------------------------
@@ -128,11 +132,14 @@ int main(int argc, char* argv[]) {
 		/*menusManager.Update();*/
 
 
-
+		updateFrames.EndPrograme();
 
 		// --------------------------------------------------------------------------------------------------
 		// -------------------------------------------(   Render   )-------------------------------------------
 		// --------------------------------------------------------------------------------------------------
+
+		rendererFrames.StartPrgrame();
+
 		GL_Clear(&win);
 
 
@@ -146,18 +153,10 @@ int main(int argc, char* argv[]) {
 
 
 
-
-
-
-
-
-
-
-		// --------------------------------------------------------------------------------------------------
-		// -------------------------------------------(   End Loop   )-------------------------------------------
-		// --------------------------------------------------------------------------------------------------
 		win.SwapWindow();
-		frame.EndPrograme();
+
+		rendererFrames.EndPrograme();
+		
 	}
 
 	
