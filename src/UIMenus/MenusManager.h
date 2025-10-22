@@ -1,7 +1,7 @@
 #ifndef MENUSMANAGER_H
 #define MENUSMANAGER_H
 
-enum MENUSSTATES {
+enum UIMenusState {
 
 	STARTMENU = 0,
 	HI = 1,
@@ -15,13 +15,14 @@ class MenusManager
 public:
 
 	// Static
-	inline static MENUSSTATES menuNow = STARTMENU;
+	inline static UIMenusState menuNow = STARTMENU;
 
 
 	MenusManager();
 
-	/* Functions */
+	/* Public Functions */
 	void Update();
+	void Renderer();
 
 
 private:

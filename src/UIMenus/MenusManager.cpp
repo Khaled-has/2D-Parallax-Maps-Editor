@@ -15,3 +15,7 @@ void MenusManager::Update()
 {
 }
 
+void MenusManager::Renderer()
+{
+}
+

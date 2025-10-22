@@ -2,18 +2,18 @@
 
 #include "Window.h"
 
-#include "Menus/MenusManager.h"
+#include "UIMenus/MenusManager.h"
 
 #include <glm/glm.hpp>
 
-struct FrameRatLimet {
+struct FrameRatLimit {
 private:
 	int frame_delay = 0;
 	Uint32 frameStart = 0;
 	int frameTime = 0;
 
 public:
-	FrameRatLimet() {
+	FrameRatLimit() {
 
 	}
 
@@ -90,7 +90,9 @@ int main(int argc, char* argv[]) {
 
 
 	// ---- Init
-	
+	MenusManager MenusManager_;
+
+
 
 
 	// Loop
@@ -98,15 +100,15 @@ int main(int argc, char* argv[]) {
 	SDL_Event ev;
 
 
-	FrameRatLimet updateFrames;
+	FrameRatLimit updateFrames;
 	updateFrames.SetFrameLimet(50);
 
-	FrameRatLimet rendererFrames;
-	rendererFrames.SetFrameLimet(50);
+	FrameRatLimit rendererFrames;
+	rendererFrames.SetFrameLimet(60);
 
 	while (run) {
 
-		updateFrames.StartPrgrame();
+		updateFrames.StartPrgrame();		   // Start update loop
 
 		// --------------------------------------------------------------------------------------------------
 		// -----------------------------------------(   PollEvents   )------------------------------------------
@@ -129,16 +131,22 @@ int main(int argc, char* argv[]) {
 		UpdateGUI();
 
 
-		/*menusManager.Update();*/
 
 
-		updateFrames.EndPrograme();
+		MenusManager_.Update();
+
+
+		updateFrames.EndPrograme();			 // End update loop 
+
+
+
+
 
 		// --------------------------------------------------------------------------------------------------
-		// -------------------------------------------(   Render   )-------------------------------------------
+		// -------------------------------------------(   Renderer   )-------------------------------------------
 		// --------------------------------------------------------------------------------------------------
 
-		rendererFrames.StartPrgrame();
+		rendererFrames.StartPrgrame();		 // Start renderer loop
 
 		GL_Clear(&win);
 
@@ -155,7 +163,7 @@ int main(int argc, char* argv[]) {
 
 		win.SwapWindow();
 
-		rendererFrames.EndPrograme();
+		rendererFrames.EndPrograme();		// End renderer loop
 		
 	}
 
