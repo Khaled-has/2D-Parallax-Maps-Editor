@@ -2,6 +2,8 @@
 
 #include "Window.h"
 
+#include "Menus/MenusManager.h"
+
 #include <glm/glm.hpp>
 
 struct FrameRatLimet {
@@ -87,6 +89,8 @@ int main(int argc, char* argv[]) {
 
 
 
+	// ---- Init
+	
 
 
 	// Loop
@@ -121,7 +125,7 @@ int main(int argc, char* argv[]) {
 		UpdateGUI();
 
 
-
+		/*menusManager.Update();*/
 
 
 

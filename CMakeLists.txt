@@ -1,5 +1,10 @@
 ﻿cmake_minimum_required(VERSION 3.24)
+
 project(2D-Parallax-Maps-Editor CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 enable_language(C)
 
@@ -49,7 +54,7 @@ target_include_directories(ImGui PUBLIC
 # Final Executable
 # ========================
 add_executable(2D-Parallax-Maps-Editor
-               src/main.cpp "src/Window.cpp")
+               src/main.cpp "src/Window.cpp" "src/Menus/MenusManager.h" "src/Menus/MenusManager.cpp")
 
 # Definitions
 
