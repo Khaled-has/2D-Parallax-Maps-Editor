@@ -1,7 +1,14 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
 
+#include <vector>
+#include <string>
+#include <fstream>
+#include <iostream>
+
 #include "imgui.h"
+
+#include "nlohmann/json.hpp"
 
 
 class StartMenu
@@ -22,6 +29,19 @@ public:
 
 private:
 
+	
+	nlohmann::json jsonFillData;
+
+	std::vector<std::pair<std::string, int>> projectsInfos;
+
+
+	// Functions
+	void UpdateEditorProjectFill();
+	void ReadEditorProjectsFill();
+
+
+	// Init
+	void Init();
 
 
 };

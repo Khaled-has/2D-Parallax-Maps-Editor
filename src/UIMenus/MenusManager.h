@@ -1,10 +1,13 @@
 #ifndef MENUSMANAGER_H
 #define MENUSMANAGER_H
 
+#include "StartMenu.h"
+
+
 enum UIMenusState {
 
-	STARTMENU = 0,
-	HI = 1,
+	STARTMENU		= 0,
+	CREATINGMENU	= 1
 
 };
 
@@ -14,10 +17,12 @@ class MenusManager
 
 public:
 
-	// Static
-	inline static UIMenusState menuNow = STARTMENU;
+
+	// Static variables
+	inline static UIMenusState runningMenu = STARTMENU;
 
 
+	// Constructor
 	MenusManager();
 
 	/* Public Functions */
@@ -27,6 +32,8 @@ public:
 
 private:
 
+	// Menus
+	StartMenu StartMenu_;
 	
 
 

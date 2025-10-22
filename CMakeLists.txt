@@ -9,6 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_language(C)
 
 # Assets Path
+#Copy assets folder 
+file(COPY ${CMAKE_SOURCE_DIR}/Assets 
+DESTINATION ${CMAKE_BINARY_DIR})
 
 
 # ========================
@@ -81,3 +84,4 @@ add_custom_command(TARGET 2D-Parallax-Maps-Editor POST_BUILD
         "${SDL3_DLL_PATH}/SDL3.dll"
         $<TARGET_FILE_DIR:2D-Parallax-Maps-Editor>
 )
+
