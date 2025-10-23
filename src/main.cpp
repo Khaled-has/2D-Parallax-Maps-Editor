@@ -105,10 +105,11 @@ int main(int argc, char* argv[]) {
 
 	FrameRatLimit rendererFrames;
 	rendererFrames.SetFrameLimet(60);
+	rendererFrames.Set_VSYNC(true);
 
 	while (run) {
 
-		updateFrames.StartPrgrame();		   // Start update loop
+		rendererFrames.StartPrgrame();		   // Start update loop
 
 		// --------------------------------------------------------------------------------------------------
 		// -----------------------------------------(   PollEvents   )------------------------------------------
@@ -136,17 +137,12 @@ int main(int argc, char* argv[]) {
 		MenusManager_.Update();
 
 
-		updateFrames.EndPrograme();			 // End update loop 
-
-
 
 
 
 		// --------------------------------------------------------------------------------------------------
 		// -------------------------------------------(   Renderer   )-------------------------------------------
 		// --------------------------------------------------------------------------------------------------
-
-		rendererFrames.StartPrgrame();		 // Start renderer loop
 
 		GL_Clear(&win);
 
