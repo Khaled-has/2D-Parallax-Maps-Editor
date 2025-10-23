@@ -47,6 +47,8 @@ Window::Window()
 	ImGui::GetStyle().Colors[ImGuiCol_ButtonHovered] = ImVec4(0.6f, 0.6f, 0.6f, 1.f);
 	ImGui::GetStyle().Colors[ImGuiCol_ButtonActive] = ImVec4(0.9f, 0.9f, 0.9f, 1.f);
 
+	io.Fonts->AddFontFromFileTTF("Assets/Fonts/Uni Sans Heavy.otf", 13.0f);
+
 }
 
 Window::~Window()

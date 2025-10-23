@@ -58,7 +58,7 @@ target_include_directories(ImGui PUBLIC
 # ========================
 add_executable(2D-Parallax-Maps-Editor
                src/main.cpp "src/Window.cpp" "src/UIMenus/HPP/MenusManager.h" "src/UIMenus/MenusManager.cpp" "src/Core/Graphics/RendererSystem.cpp" "src/Core/Graphics/AssetsManager.cpp" 
-               "src/UIMenus/StartMenu.cpp" "src/Core/GL/Texture.cpp")
+               "src/UIMenus/StartMenu.cpp" "src/Core/GL/Texture.cpp" "src/Core/Events/EventsSystem.cpp")
 
 # Definitions
 

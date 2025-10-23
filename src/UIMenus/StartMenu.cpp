@@ -51,7 +51,8 @@ void StartMenu::ReadEditorProjectsFill()
 
 	for (int i = 0; i < nProjects; i++)
 	{
-		projectsInfos.push_back(ProjectData(dataProjects["name"], dataProjects["path"]));
+		projectsInfos.push_back(ProjectData(dataProjects[i]["name"], dataProjects[i]["path"]));
+		std::cout << projectsInfos.at(i).name << " | " << projectsInfos.at(i).path << std::endl;
 	}
 
 
@@ -74,7 +75,7 @@ void StartMenu::StartUI()
 
 	//Project Render Button
 	for (int i = 0; i < projectsInfos.size(); i++) {
-		if (ImGui::Button(projectsInfos.at(i).name.c_str(), ImVec2(205, 40))) {
+		if (ImGui::Button(projectsInfos.at(i).name.c_str(), ImVec2(248, 55))) {
 
 			openProject.path = projectsInfos.at(i).path;
 			uiState = STARTAPPLICATION;
