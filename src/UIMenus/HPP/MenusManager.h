@@ -6,8 +6,8 @@
 
 enum UIMenusState {
 
-	STARTMENU		= 0,
-	CREATINGMENU	= 1
+	STARTMENU		 = 0,
+	STARTAPPLICATION = 1
 
 };
 

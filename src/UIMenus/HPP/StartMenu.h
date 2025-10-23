@@ -5,10 +5,14 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <Windows.h>
+#include <ShObjIdl_core.h>
+#include <direct.h>
 
 #include "imgui.h"
 
 #include "nlohmann/json.hpp"
+
 
 
 struct OpenProject
@@ -31,7 +35,7 @@ public:
 
 
 	// Public Functions
-	void Update();
+	bool Update();
 	void Renderer();
 
 
@@ -46,24 +50,35 @@ private:
 	nlohmann::json jsonFillData;
 
 
-	struct ProjectData { std::string name; std::string path; };
+	struct ProjectData {
+		std::string name; std::string path; 
+
+		ProjectData(std::string name, std::string path)
+		{
+			this->name = name; this->path = path;
+		}
+	};
 	std::vector<ProjectData> projectsInfos;
 
 
 
 	enum UIState {
-		START	= 0,
-		CREATE  = 1,
+		START			 = 0,
+		CREATE			 = 1,
+		STARTAPPLICATION = 2,
 	};
 	UIState uiState = START;
 
 	// Functions
-	void UpdateEditorProjectFill();
+	void UpdateEditorProjectFill(std::string name, std::string path);
 	void ReadEditorProjectsFill();
 
 	void StartUI();
 	void CreateUI();
 
+
+	void CreatePlatformFiles(std::string path, std::string name);
+	std::string OpenSystemWindow();
 
 	// Init
 	void Init();

@@ -16,7 +16,7 @@ void MenusManager::Update()
 
 	if (runningMenu == STARTMENU)
 	{
-		StartMenu_.Update();
+		if (StartMenu_.Update()) runningMenu = STARTAPPLICATION;
 	}
 
 }
