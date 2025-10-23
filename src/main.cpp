@@ -2,7 +2,7 @@
 
 #include "Window.h"
 
-#include "UIMenus/MenusManager.h"
+#include "UIMenus/HPP/MenusManager.h"
 
 #include <glm/glm.hpp>
 
@@ -166,8 +166,6 @@ int main(int argc, char* argv[]) {
 		rendererFrames.EndPrograme();		// End renderer loop
 		
 	}
-
-	
 
 	return 0;
 }
