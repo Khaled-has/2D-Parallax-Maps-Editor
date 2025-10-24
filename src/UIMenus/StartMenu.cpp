@@ -1,4 +1,4 @@
-#include "HPP/StartMenu.h"
+#include "StartMenu.h"
 
 StartMenu::StartMenu()
 {
@@ -77,8 +77,12 @@ void StartMenu::StartUI()
 	for (int i = 0; i < projectsInfos.size(); i++) {
 		if (ImGui::Button(projectsInfos.at(i).name.c_str(), ImVec2(248, 55))) {
 
-			openProject.path = projectsInfos.at(i).path;
+			
 			uiState = STARTAPPLICATION;
+
+			// Send project data to Editor events system
+			EventsSystem::runningProjectInfo.name = projectsInfos.at(i).name;
+			EventsSystem::runningProjectInfo.path = projectsInfos.at(i).path;
 
 		}
 	}
@@ -118,12 +122,13 @@ void StartMenu::CreateUI()
 
 		CreatePlatformFiles(pathProject, result);
 		
-		openProject.path = pathProject + "/" + result;
+		// Send project data to Editor events system
+		EventsSystem::runningProjectInfo.name = pathProject + "/" + result;
+		EventsSystem::runningProjectInfo.path = result;
+
 		uiState = STARTAPPLICATION;
 
 		UpdateEditorProjectFill(result, pathProject + "/" + result);
-
-		std::cout << openProject.path << std::endl;
 
 	}
 	ImGui::SameLine();

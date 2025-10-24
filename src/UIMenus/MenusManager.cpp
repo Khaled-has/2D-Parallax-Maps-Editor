@@ -1,4 +1,4 @@
-#include "HPP/MenusManager.h"
+#include "MenusManager.h"
 
 
 MenusManager::MenusManager()
@@ -14,9 +14,9 @@ void MenusManager::Init()
 void MenusManager::Update()
 {
 
-	if (runningMenu == STARTMENU)
+	if (EventsSystem::applicationState == START)
 	{
-		if (StartMenu_.Update()) runningMenu = STARTAPPLICATION;
+		if (StartMenu_.Update()) EventsSystem::applicationState = STARTAPPLICATION;
 	}
 
 }
@@ -24,7 +24,7 @@ void MenusManager::Update()
 void MenusManager::Renderer()
 {
 
-	if (runningMenu == STARTMENU)
+	if (EventsSystem::applicationState == START)
 	{
 		StartMenu_.Renderer();
 	}

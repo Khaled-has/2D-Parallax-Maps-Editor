@@ -3,23 +3,10 @@
 
 #include "StartMenu.h"
 
-
-enum UIMenusState {
-
-	STARTMENU		 = 0,
-	STARTAPPLICATION = 1
-
-};
-
-
 class MenusManager 
 {
 
 public:
-
-
-	// Static variables
-	inline static UIMenusState runningMenu = STARTMENU;
 
 
 	// Constructor

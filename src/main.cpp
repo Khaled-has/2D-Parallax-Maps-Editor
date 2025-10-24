@@ -2,7 +2,7 @@
 
 #include "Window.h"
 
-#include "UIMenus/HPP/MenusManager.h"
+#include "UIMenus/MenusManager.h"
 
 #include <glm/glm.hpp>
 
@@ -137,8 +137,8 @@ int main(int argc, char* argv[]) {
 		MenusManager_.Update();
 
 
-
-
+		if (EventsSystem::applicationState == EDITORRUNNING)
+			std::cout << EventsSystem::runningProjectInfo.name << " | " << EventsSystem::runningProjectInfo.path << std::endl;
 
 		// --------------------------------------------------------------------------------------------------
 		// -------------------------------------------(   Renderer   )-------------------------------------------

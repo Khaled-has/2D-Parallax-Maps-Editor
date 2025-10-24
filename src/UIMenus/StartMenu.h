@@ -13,26 +13,13 @@
 
 #include "nlohmann/json.hpp"
 
-
-
-struct OpenProject
-{
-
-	std::string path = "NONE";
-
-	// Settings
-
-
-};
+#include "../Core/Events/EventsSystem.h"
 
 
 class StartMenu
 {
 
 public:
-
-	inline static OpenProject openProject;
-
 
 	// Public Functions
 	bool Update();
