@@ -1,8 +1,11 @@
 #include <iostream>
+#include <thread>
 
 #include "Window.h"
 
 #include "UIMenus/MenusManager.h"
+#include "Core/Events/EditorLoadSystem.h"
+#include "Core/Graphics/RendererSystem.h"
 
 #include <glm/glm.hpp>
 
@@ -87,18 +90,16 @@ int main(int argc, char* argv[]) {
 	// Window Init
 	Window win;
 
-
-
 	// ---- Init
 	MenusManager MenusManager_;
 
+	EditorLoadSystem EditorEventsLoad;
 
-
+	RendererSystem RendererSystem_;
 
 	// Loop
 	bool run = true;
 	SDL_Event ev;
-
 
 	FrameRatLimit updateFrames;
 	updateFrames.SetFrameLimet(50);
@@ -107,7 +108,10 @@ int main(int argc, char* argv[]) {
 	rendererFrames.SetFrameLimet(60);
 	rendererFrames.Set_VSYNC(true);
 
+
+
 	while (run) {
+
 
 		rendererFrames.StartPrgrame();		   // Start update loop
 
@@ -132,8 +136,10 @@ int main(int argc, char* argv[]) {
 		UpdateGUI();
 
 
+		// Events load
+		EditorEventsLoad.Update();
 
-
+		// UI Menus Update
 		MenusManager_.Update();
 
 

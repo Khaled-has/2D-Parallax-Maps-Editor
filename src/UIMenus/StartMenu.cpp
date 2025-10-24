@@ -15,7 +15,7 @@ void StartMenu::UpdateEditorProjectFill(std::string name, std::string path)
 	
 	projectsInfos.push_back(ProjectData(name, path));
 
-	std::ifstream in("Assets/Data/ED.json");
+	std::ifstream in(PRO_ASSETS_PATH + "/Data/ED.json");
 	if (in.is_open()) {
 		in >> jsonFillData;
 	}
@@ -30,7 +30,7 @@ void StartMenu::UpdateEditorProjectFill(std::string name, std::string path)
 	nump++;
 	jsonFillData["nProjects"] = nump;
 
-	std::ofstream out("Assets/Data/ED.json");
+	std::ofstream out(PRO_ASSETS_PATH + "/Data/ED.json");
 	out << jsonFillData.dump(4);
 
 	in.close();
@@ -42,7 +42,7 @@ void StartMenu::ReadEditorProjectsFill()
 {
 
 	// Read fill
-	std::fstream fill("Assets/Data/ED.json");
+	std::fstream fill(PRO_ASSETS_PATH + "/Data/ED.json");
 
 	fill >> jsonFillData;
 

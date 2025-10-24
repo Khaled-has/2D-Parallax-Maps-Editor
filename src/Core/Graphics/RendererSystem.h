@@ -1,7 +1,7 @@
 #ifndef RENDERERSYSTEM_H
 #define RENDERERSYSTEM_H
 
-#include <glad/glad.h>
+#include "Re/LoadingBar.h"
 
 class RendererSystem
 {
@@ -12,7 +12,7 @@ public:
 
 
 	// Public Functions
-
+	void Renderer();
 
 
 	// Constructor & Destructor
@@ -22,6 +22,11 @@ public:
 
 private:
 
+	// Rendering Components
+	LoadingBar loadingBar;
+
+	// Init 
+	void InitRenderSystem();
 
 };
 

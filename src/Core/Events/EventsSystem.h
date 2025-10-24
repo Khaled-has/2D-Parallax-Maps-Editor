@@ -3,10 +3,18 @@
 
 #include <iostream>
 
+
+// Get Device Assets Path From CMAKE
+#ifdef ASSETS_PATH
+inline static std::string PRO_ASSETS_PATH = ASSETS_PATH;
+#endif
+
+
+
 enum EditorEventsType {
 
 	START			 = 0,
-	STARTAPPLICATION = 1,
+	STARTEDITOR		 = 1,
 	EDITORRUNNING    = 2
 
 };

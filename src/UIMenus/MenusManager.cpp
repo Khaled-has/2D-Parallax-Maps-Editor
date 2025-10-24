@@ -16,7 +16,7 @@ void MenusManager::Update()
 
 	if (EventsSystem::applicationState == START)
 	{
-		if (StartMenu_.Update()) EventsSystem::applicationState = STARTAPPLICATION;
+		if (StartMenu_.Update()) EventsSystem::applicationState = STARTEDITOR;
 	}
 
 }

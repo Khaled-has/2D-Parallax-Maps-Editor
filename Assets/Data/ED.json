@@ -1,5 +1,9 @@
 {
-    "nProjects": 0,
+    "nProjects": 1,
     "pProjects": [
+        {
+            "name": "Example - 1",
+            "path": "D:\\World-Editor-Project\\2D-Parallax-Maps-Editor\\Example Projects/Example - 1"
+        }
     ]
 }

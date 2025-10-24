@@ -9,9 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_language(C)
 
 # Assets Path
-#Copy assets folder 
-file(COPY ${CMAKE_SOURCE_DIR}/Assets 
-DESTINATION ${CMAKE_BINARY_DIR})
+set(ASSETS_PATH "${CMAKE_SOURCE_DIR}/Assets")
+add_compile_definitions(ASSETS_PATH="${ASSETS_PATH}")
 
 
 # ========================
@@ -51,14 +50,15 @@ add_library(ImGui
 
 target_include_directories(ImGui PUBLIC
                             external/ImGui
-                            external/SDL3/include)
+                            external/SDL3/include
+                            src/Core)
 
 # ========================
 # Final Executable
 # ========================
 add_executable(2D-Parallax-Maps-Editor
                src/main.cpp "src/Window.cpp" "src/UIMenus/MenusManager.h" "src/UIMenus/MenusManager.cpp" "src/Core/Graphics/RendererSystem.cpp" "src/Core/Graphics/AssetsManager.cpp" 
-               "src/UIMenus/StartMenu.cpp" "src/Core/GL/Texture.cpp" )
+               "src/UIMenus/StartMenu.cpp" "src/Core/GL/Texture.cpp"  "src/Core/Graphics/Re/LoadingBar.cpp" "src/Core/GL/Shader.cpp")
 
 # Definitions
 
